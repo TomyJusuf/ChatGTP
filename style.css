@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  color: #555;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.country {
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem;
+  width: 30rem;
+  border-radius: 0.7rem;
+  margin: 0 3rem;
+  /* overflow: hidden; */
+}
+
+
+
+.code::before {
+  content: 'code';
+  width: 100%;
+  position: absolute;
+  top: -4rem;
+
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.code {
+  transform: scale(0.8) translateY(1rem);
+  margin-left: 0;
+}
+
+.country__img {
+  width: 30rem;
+  height: 17rem;
+  object-fit: cover;
+  background-color: #eee;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.country__data {
+  padding: 2.5rem 3.75rem 3rem 3.75rem;
+}
+
+.country__name {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.country__region {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.country__row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.country__row span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 2.4rem;
+}
+
+.btn-country {
+  border: none;
+  font-size: 2rem;
+  padding: 2rem 5rem;
+  border-radius: 0.7rem;
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+}
+
+.code {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.input-text {
+  background-color: #fff;
+  width: 30rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  font-family: system-ui;
+  color: #555;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  /* For placeholder */
+  &::placeholder {
+    color: #888;
+  }
+
+  /* Hover state */
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Focus state */
+  &:focus {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.3rem);
+    outline: none;
+  }
+}
+
+.btn-text {
+  background-color: green;
+  width: 175px;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  font-family: system-ui;
+  color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  /* Hover state */
+  &:hover {
+    background-color: #4fa94f; /* a slightly darker shade for hover */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Active state (when the button is pressed) */
+  &:active {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Focus state */
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn-clear {
+  background-color: orangered;
+  width: 175px;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  font-family: system-ui;
+  color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  /* Hover state */
+  &:hover {
+    background-color: #e54d00; /* a slightly darker shade for hover */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Active state (when the button is pressed) */
+  &:active {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Focus state */
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.js-code-input {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font is preferred for coding */
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical; /* Allows only vertical resizing */
+  background-color: #fff;
+  outline: none;
+  tab-size: 4; /* Makes the tab character 4 spaces wide */
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+}
+
+.js-code-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.js-code-input::placeholder {
+  color: #a9a9a9;
+}
+
+.js-code-output {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font is preferred for coding */
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical; /* Allows only vertical resizing */
+  background-color: #fff;
+  outline: none;
+  tab-size: 4; /* Makes the tab character 4 spaces wide */
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+}
+
+.js-code-output:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.js-code-output::placeholder {
+  color: #a9a9a9;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.code {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.js-code-input, 
+.js-code-output {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  resize: vertical;
+  background-color: #fff;
+  outline: none;
+  tab-size: 4;
+  white-space: pre-wrap;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  width: 100%;  /* Ensure buttons take full width of the parent container */
+  height: 50px; /* Set a specific height for the buttons */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+  display: flex; /* Used to center the text both vertically and horizontally */
+  justify-content: center; /* Centers text horizontally */
+  align-items: center; /* Centers text vertically */
+  flex: 0 0;  /* This ensures the button doesn't grow or shrink based on its content */
+}
