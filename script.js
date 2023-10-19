@@ -1,5 +1,5 @@
 const gptAnswerContainer = document.getElementById('outputAnswer');
-const API_KEY = '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';
+const API_KEY = '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';
 const MODEL_NAME = 'gpt-3.5-turbo';
 const MAX_TOKENS = 1000;
 const endpoint = 'https://api.openai.com/v1/chat/completions';
