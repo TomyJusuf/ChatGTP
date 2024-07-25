@@ -1,5 +1,5 @@
 const gptAnswerContainer = document.getElementById('outputAnswer');
-const API_KEY = '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';
+const API_KEY = '.........'; // token is already expired
 const MODEL_NAME = 'gpt-3.5-turbo';
 const MAX_TOKENS = 1000;
 const endpoint = 'https://api.openai.com/v1/chat/completions';
@@ -12,22 +12,21 @@ async function fetchGPTResponse(payload) {
   }
 
   const data = await response.json();
-  console.log(data);
+ 
   const message = data.choices[0].message.content;
-  console.log(message);
+
   gptAnswerContainer.innerHTML = message;
-  // return message;
+   return message;
 }
 
 async function explainCode() {
-  //theCode
+
   let code = document.getElementById('inputCode').value;
   let codePrompt =
     'You will be provided with a piece of code, and your task is to explain it in a concise way. ' +
     code;
 
-  //missing information
-  //TODO: create the payload according to the given api
+  //TODO: create the payload according to the given API
   let payload = {
     model: 'gpt-3.5-turbo',
     messages: [{ role: 'user', content: codePrompt }],
@@ -35,17 +34,14 @@ async function explainCode() {
   };
 
   let fetchOptions = {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    method: 'POST',
     headers: {
       Authorization: `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
   };
-  // fetchGPTResponse(fetchOptions).then((data) => {
-  //   gptAnswerContainer.innerHTML = data;
-  //   console.log(data);
-  // });
+
   fetchGPTResponse(fetchOptions);
 }
 explainCode();
